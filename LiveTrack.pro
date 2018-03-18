@@ -25,7 +25,9 @@ DISTFILES += qml/LiveTrack.qml \
     rpm/LiveTrack.spec \
     rpm/LiveTrack.yaml \
     translations/*.ts \
-    LiveTrack.desktop
+    LiveTrack.desktop \
+    qml/PositionSource.qml \
+    qml/Timer.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128
 QT += qml quick positioning sensors

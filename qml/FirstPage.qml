@@ -30,18 +30,11 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import QtPositioning 5.3
-import '.'
+import "."
 
 
 Page {
     id: page
-    property bool timerdone : true;
-    property Position positionsave: []
-
-
-
-
     // The effective value will be restricted by ApplicationWindow.allowedOrientations
     allowedOrientations: Orientation.All
 
@@ -64,7 +57,6 @@ Page {
         // of the page, followed by our content.
         Column {
             id: column
-
             width: page.width
             spacing: Theme.paddingLarge
             PageHeader {
@@ -97,112 +89,27 @@ Page {
                 id: speed
                 x: Theme.horizontalPageMargin
                 y: altitude.AlignBottom
-                text:  qsTr("Geschwindigkeit:")+gps.speed+qsTr("m/s")
+                text:  qsTr("Geschwindigkeit:")+gps.position.speed+qsTr("m/s")
                 color: Theme.secondaryHighlightColor
                 font.pixelSize: Theme.fontSizeLarge
                 visible: true
             }
 
-            Button {
+            TextSwitch {
                 id: start
                 x: Theme.horizontalPageMargin
                 y: speed.AlignBottom
-                text:  qsTr("Start this shit")
-                color: Theme.secondaryHighlightColor
+             text:  qsTr("Start this shit")
+             checked: false
+         //       color: Theme.secondaryHighlightColor
                 visible: true
-                onClicked:{
-                    positiontimer.start();
-
+                onCheckedChanged:{
+                    if (positiontimer.running | positiontimer.done) {positiontimer.stop}
+                    else positiontimer.start();
                 }
 
             }
-        }
-    }
-    Component.onCompleted: gps.start();   //start timer,todo
-
-
-
-
-    PositionSource {
-        id: gps
-        // If application is no longer active, turn positioning off immediately
-        // if we already have a lock, otherwise keep trying for a couple minutes
-        // and give up if we still don't gain that lock.
-        active: true
-        property var coordHistory: []
-        property bool ready: false
-        property var timeActivate:  Date.now()
-        property var timePosition:  Date.now()
-
-        onActiveChanged: {
-            // Keep track of when positioning was (re)activated.
-            if (gps.active) gps.timeActivate = Date.now();
-        }
-
-        onPositionChanged: {
-            // Calculate direction as a median of individual direction values
-            // calculated after significant changes in position. This should be
-            // more stable than any direct value and usable with map.autoRotate.
-            gps.ready = gps.position.latitudeValid &&
-                gps.position.longitudeValid &&
-                gps.position.coordinate.latitude &&
-                gps.position.coordinate.longitude;
-            gps.timePosition = Date.now();
-            var threshold = gps.position.horizontalAccuracy || 15;
-            if (threshold < 0 || threshold > 40) return;
-            var coord = gps.position.coordinate;
-            if (gps.coordHistory.length === 0)
-                gps.coordHistory.push(QtPositioning.coordinate(
-                    coord.latitude, coord.longitude));
-            var coordPrev = gps.coordHistory[gps.coordHistory.length-1];
-            if (coordPrev.distanceTo(coord) > threshold) {
-                gps.coordHistory.push(QtPositioning.coordinate(
-                    coord.latitude, coord.longitude));
-                gps.coordHistory = gps.coordHistory.slice(-3); }
-
-
-
-            if (positiontimer.done){
-            positiontimer.restart();
-            positiontimer.done=false;
-                backend.sendData()
-               }
 
         }
-
     }
-
-
-
-
-    QtObject {
-        id:backend
-
-     function sendData(Position) {
-         console.log("Sending location"+(new Date).getTime());
-         var http = new XMLHttpRequest()
-         var url = vars.url+"?id="+ vars.id +"&lat=" + Position.coordinate.latitude +"&lon="+Position.coordinate.longitude+"&timestamp="+this.timestamp+"&speed="+this.speed;
-         http.open("Get", url, true);
-         http.addEventListener('load', function(http) {
-            if (http.status === 200) {
-               console.log(http.responseText);
-           //     positiontimer...;
-            }
-            else {
-               console.warn(http.statusText, http.responseText);
-            }
-         });
-         http.send();
-     //    return
-    }
-
-    }
-
-    Timer {
-        id: positiontimer
-        interval: 1; running: true; repeat: false //1ms for debug
-        onTriggered: timerdone = true
-    }
-
-
 }

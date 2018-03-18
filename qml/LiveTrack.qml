@@ -30,6 +30,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import QtPositioning 5.3
 import "."
 
 ApplicationWindow
@@ -37,5 +38,31 @@ ApplicationWindow
     initialPage: Component { FirstPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
+    PositionSource { id: gps }
+    Timer { id: positiontimer }
+
+    function sendData(Position) {
+        var state = 5;
+        var timestamp=(new Date).getTime();
+        var http = new XMLHttpRequest()
+        var url = livetracksettings.getString("URL")+livetracksettings.getString("ID")+"?lat=" + Position.coordinate.latitude +"&lon="+Position.coordinate.longitude+"&timestamp="+timestamp+"&speed="+Position.speed;
+        http.open("Get", url, true);
+        http.onreadystatechange = function() {
+          if (http.readyState === XMLHttpRequest.DONE) {
+           if (http.status === 200) {
+                console.log("Sending location "+ timestamp);
+               state=0;
+           }
+           else {
+              console.warn("failed");
+               state=-10;
+                }
+            }
+        };
+        http.send();
+       return state;
+}
+
+
 }
 
