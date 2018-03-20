@@ -5,7 +5,7 @@ import QtQuick 2.0
         property int sendgood:0;
         property int sendbad:0;
         property int ignored:0;
-        property int intervald:1000;
+        property int intervald:livetracksettings.get("intervald");
 
         id: positiontimer
         interval: intervald; running: false; repeat: false //1s

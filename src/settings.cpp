@@ -7,9 +7,11 @@ void Settings::initialize()
 {
     qDebug("Initializing settings");
     if (!this->contains("URL"))
-        this->setValue("URL", "deinemama");
+        this->setValue("URL", "https://my.url.local/trackme/");
     if (!this->contains("ID"))
-        this->setValue("ID", "deinemama");
+        this->setValue("ID", "2711/jolla");
+    if (!this->contains("intervald"))
+        this->setValue("intervald", 1000);
 
 }
 void Settings::set(const QString& key, const QVariant &value){

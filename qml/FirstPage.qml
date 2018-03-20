@@ -64,21 +64,23 @@ Page {
                 visible: true
             }
 
-            TextSwitch {
-                id: start
-                x: Theme.horizontalPageMargin
+            Row {
+                id: iconButtons
+                spacing: Theme.paddingLarge
+                anchors.horizontalCenter: parent.horizontalCenter
                 y: speed.AlignBottom
-             text:  qsTr("Start this shit")
-             checked: false
-                visible: true
-                onCheckedChanged:{
-                    if (positiontimer.running || positiontimer.done) {
-                        positiontimer.stop();
-                    }
-                    else{ positiontimer.start();
-                         }
+                IconButton {
+                    id: pause
+                    icon.source: "image://theme/icon-l-pause"
+                    onClicked:  positiontimer.stop();
+                    enabled: (positiontimer.running || positiontimer.done)
                 }
-
+                IconButton {
+                    id: play
+                    icon.source: "image://theme/icon-l-play"
+                    onClicked: positiontimer.start();
+                    enabled: !(positiontimer.running || positiontimer.done)
+                }
             }
             Column {
                 id: statistics

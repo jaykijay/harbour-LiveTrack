@@ -1,18 +1,14 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import '.'
+import "."
 
 Page {
-
     id: settingspages
     property var textAlignment: undefined
-
-    // The effective value will be restricted by ApplicationWindow.allowedOrientations
     allowedOrientations: Orientation.All
 
     Column {
         id: column
-
         width: settingspages.width
         spacing: Theme.paddingLarge
         PageHeader {
@@ -28,6 +24,7 @@ Page {
         width: parent.width
         horizontalAlignment: textAlignment
         EnterKey.iconSource: "image://theme/icon-m-enter-next"
+        EnterKey.onClicked: idlabel.focus = true
         onTextChanged:
             livetracksettings.set("URL",text)
     }
@@ -39,9 +36,24 @@ Page {
         width: parent.width
         horizontalAlignment: textAlignment
         EnterKey.iconSource: "image://theme/icon-m-enter-next"
+        EnterKey.onClicked: intervaldlabel.focus = true
         onTextChanged:
             livetracksettings.set("ID",text)
-
+    }
+    TextField {
+        id: intervaldlabel
+        width: parent.width
+        inputMethodHints: Qt.ImhFormattedNumbersOnly
+        label: "Update locatation every x seconds"
+        text: livetracksettings.getString("intervald")/1000
+        placeholderText: label
+        horizontalAlignment: textAlignment
+        EnterKey.iconSource: "image://theme/icon-m-enter-next"
+        EnterKey.onClicked: serverurllabel.focus = true
+        onTextChanged: {
+            //positiontimer.interval:1000; ka warum das nicht geht.... todo.. direkt aktualisieren nach dem ändern..
+            livetracksettings.set("intervald",text*1000)
+        }
     }
 }
 }

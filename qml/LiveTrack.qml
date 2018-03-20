@@ -39,9 +39,11 @@ ApplicationWindow
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
     PositionSource { id: gps }
-    Timer { id: positiontimer }
-    property bool state: false;
+    Timer {id: positiontimer}
+    Page {id:settingspages;}
 
+//-----------------------Function-----------------------------//
+    property bool state: false;
     function sendData(Position) {
         var timestamp=(new Date).getTime();
         var http = new XMLHttpRequest()
@@ -61,7 +63,7 @@ ApplicationWindow
         http.send();
        return state;
 }
-
+//----------------------------------------------------------//
 
 }
 
