@@ -40,9 +40,9 @@ ApplicationWindow
     allowedOrientations: defaultAllowedOrientations
     PositionSource { id: gps }
     Timer { id: positiontimer }
+    property bool state: false;
 
     function sendData(Position) {
-        var state = 5;
         var timestamp=(new Date).getTime();
         var http = new XMLHttpRequest()
         var url = livetracksettings.getString("URL")+livetracksettings.getString("ID")+"?lat=" + Position.coordinate.latitude +"&lon="+Position.coordinate.longitude+"&timestamp="+timestamp+"&speed="+Position.speed;
@@ -50,12 +50,11 @@ ApplicationWindow
         http.onreadystatechange = function() {
           if (http.readyState === XMLHttpRequest.DONE) {
            if (http.status === 200) {
-                console.log("Sending location "+ timestamp);
-               state=0;
+               state = true;
            }
            else {
               console.warn("failed");
-               state=-10;
+                state = false;
                 }
             }
         };

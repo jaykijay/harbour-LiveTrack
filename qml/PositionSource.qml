@@ -10,14 +10,10 @@ PositionSource {
     property var timePosition:  Date.now()
 
     onActiveChanged: {
-        // Keep track of when positioning was (re)activated.
         if (gps.active) gps.timeActivate = Date.now();
     }
 
     onPositionChanged: {
-        // Calculate direction as a median of individual direction values
-        // calculated after significant changes in position. This should be
-        // more stable than any direct value and usable with map.autoRotate.
         gps.ready = gps.position.latitudeValid &&
             gps.position.longitudeValid &&
             gps.position.coordinate.latitude &&

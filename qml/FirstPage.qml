@@ -1,37 +1,6 @@
-/*
-  Copyright (C) 2013 Jolla Ltd.
-  Contact: Thomas Perl <thomas.perl@jollamobile.com>
-  All rights reserved.
-
-  You may use this file under the terms of BSD license as follows:
-
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions are met:
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright
-      notice, this list of conditions and the following disclaimer in the
-      documentation and/or other materials provided with the distribution.
-    * Neither the name of the Jolla Ltd nor the
-      names of its contributors may be used to endorse or promote products
-      derived from this software without specific prior written permission.
-
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR
-  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*/
-
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "."
-
 
 Page {
     id: page
@@ -65,7 +34,7 @@ Page {
             Label {
                 id:longitudelabel
                 x: Theme.horizontalPageMargin
-                text: qsTr("longitude:")+gps.position.coordinate.longitude
+                text: qsTr("Longitude:")+gps.position.coordinate.longitude
                 color: Theme.secondaryHighlightColor
                 font.pixelSize: Theme.fontSizeLarge
             }
@@ -73,7 +42,7 @@ Page {
                 id: latitudelabel
                 x: Theme.horizontalPageMargin
                 y: longitudelabel.AlignBottom
-                text: qsTr("latitude:")+gps.position.coordinate.latitude
+                text: qsTr("Latitude:")+gps.position.coordinate.latitude
                 color: Theme.secondaryHighlightColor
                 font.pixelSize: Theme.fontSizeLarge
             }
@@ -101,15 +70,35 @@ Page {
                 y: speed.AlignBottom
              text:  qsTr("Start this shit")
              checked: false
-         //       color: Theme.secondaryHighlightColor
                 visible: true
                 onCheckedChanged:{
-                    if (positiontimer.running | positiontimer.done) {positiontimer.stop}
-                    else positiontimer.start();
+                    if (positiontimer.running || positiontimer.done) {
+                        positiontimer.stop();
+                    }
+                    else{ positiontimer.start();
+                         }
                 }
 
             }
+            Column {
+                id: statistics
+                spacing: Theme.paddingLarge
+                width: parent.width
+                x: Theme.horizontalPageMargin
+                y: start.AlignBottom
+                visible: true
+                Label {
+                    text:  qsTr("Gesendete Koordinaten:\n ")+positiontimer.sendgood+qsTr(" ok, ")+positiontimer.sendbad+qsTr(" failed")
+                    color: Theme.secondaryHighlightColor
+                    font.pixelSize: Theme.fontSizeLarge
+                }
+                Label {
+                    text:  qsTr("Timer Intervall: ")+positiontimer.interval
+                    color: Theme.secondaryHighlightColor
+                    font.pixelSize: Theme.fontSizeLarge
+                }
 
+            }
         }
     }
 }

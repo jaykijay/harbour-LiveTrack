@@ -2,22 +2,31 @@ import QtQuick 2.0
 
     Timer {
         property bool done: false
+        property int sendgood:0;
+        property int sendbad:0;
+        property int ignored:0;
+        property int intervald:1000;
+
         id: positiontimer
-        interval: 1000; running: false; repeat: false //1s
+        interval: intervald; running: false; repeat: false //1s
         onTriggered:{
             done=true;
-            if(gps.ready && gps.valid && sendData(gps.position)) {
-                positiontimer.restart();
-                done=false;
-                console.log("Timmer triggered, send good");
+            if(gps.ready && gps.valid){
+                       if(sendData(gps.position) === true) {
+                        positiontimer.interval = intervald;
+                        positiontimer.restart();
+                        done=false;
+                        sendgood++;
 
+                    }
+                        else{
+                        positiontimer.interval = positiontimer.interval *2;
+                        positiontimer.restart();
+                        done=false;
+                        sendbad++;
+                    }
             }
-                else{
-                positiontimer.interval = positiontimer.interval *2;
-                positiontimer.restart();
-                done=false;
-                console.log("Timmer triggered, send failed");
-            }
+            else
+                ignored++;
         }
-
     }
