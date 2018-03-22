@@ -11,22 +11,22 @@ import QtQuick 2.0
         interval: intervald; running: false; repeat: false //1s
         onTriggered:{
             done=true;
-            if(gps.ready && gps.valid){
+            //console.log("debug "+ gps.ready +"a "+ gps.valid +"b "+ gps.threshold +"c "+ sendgood +"d "+ gps.changedbig);
+            if(gps.ready && gps.valid && gps.threshold>0 && gps.threshold<40 && (sendgood===0 || gps.changedbig) ){
+                //console.log("Gps okay,sending Data");
                        if(sendData(gps.position) === true) {
                         positiontimer.interval = intervald;
-                        positiontimer.restart();
-                        done=false;
                         sendgood++;
 
                     }
                         else{
                         positiontimer.interval = positiontimer.interval *2;
-                        positiontimer.restart();
-                        done=false;
                         sendbad++;
                     }
             }
-            else
-                ignored++;
+            else ignored++;
+
+            positiontimer.restart();
+            done=false;
         }
     }

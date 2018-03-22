@@ -47,9 +47,17 @@ Page {
                 font.pixelSize: Theme.fontSizeLarge
             }
             Label {
+                id: accuracylabel
+                x: Theme.horizontalPageMargin
+                y: longitudelabel.AlignBottom
+                text: qsTr("Accuracy:")+gps.position.horizontalAccuracy+qsTr("m")
+                color: Theme.secondaryHighlightColor
+                font.pixelSize: Theme.fontSizeLarge
+            }
+            Label {
                 id: altitude
                 x: Theme.horizontalPageMargin
-                y: latitudelabel.AlignBottom
+                y: accuracylabel.AlignBottom
                 text: qsTr("Höhe:")+gps.position.coordinate.altitude+qsTr("m")
                 color: Theme.secondaryHighlightColor
                 font.pixelSize: Theme.fontSizeLarge
@@ -87,7 +95,7 @@ Page {
                 spacing: Theme.paddingLarge
                 width: parent.width
                 x: Theme.horizontalPageMargin
-                y: start.AlignBottom
+                y: iconButtons.AlignBottom
                 visible: true
                 Label {
                     text:  qsTr("Gesendete Koordinaten:\n ")+positiontimer.sendgood+qsTr(" ok, ")+positiontimer.sendbad+qsTr(" failed")

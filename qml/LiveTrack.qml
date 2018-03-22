@@ -47,7 +47,7 @@ ApplicationWindow
     function sendData(Position) {
         var timestamp=(new Date).getTime();
         var http = new XMLHttpRequest()
-        var url = livetracksettings.getString("URL")+livetracksettings.getString("ID")+"?lat=" + Position.coordinate.latitude +"&lon="+Position.coordinate.longitude+"&timestamp="+timestamp+"&speed="+Position.speed;
+        var url = livetracksettings.getString("URL")+livetracksettings.getString("ID")+"?lat=" + Position.coordinate.latitude +"&lon="+Position.coordinate.longitude+"&timestamp="+timestamp+"&alt="+Position.coordinate.altitude+"&speed="+Position.speed+"&acc="+Position.horizontalAccuracy;
         http.open("Get", url, true);
         http.onreadystatechange = function() {
           if (http.readyState === XMLHttpRequest.DONE) {
