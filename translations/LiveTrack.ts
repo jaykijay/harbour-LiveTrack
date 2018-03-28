@@ -4,34 +4,89 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <source>My Cover</source>
+        <source> failed</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Livetrack</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stats:
+ </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> ok,
+ </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Show Page 2</source>
+        <source>Settings</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Accuracy:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Speed:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source> ok, </source>
+        <translation></translation>
+    </message>
+    <message>
+        <source> failed</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Timer Intervall: </source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>sec</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>LiveTracker</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>UI Template</source>
+        <source>Longitude:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hello Sailors</source>
+        <source>Latitude:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>m</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>m/s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send Coordinates 
+</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>SecondPage</name>
+    <name>SettingsPages</name>
     <message>
-        <source>Nested Page</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Item</source>
-        <translation type="unfinished"></translation>
+        <source>Settings</source>
+        <translation></translation>
     </message>
 </context>
 </TS>

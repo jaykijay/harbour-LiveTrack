@@ -58,7 +58,7 @@ Page {
                 id: altitude
                 x: Theme.horizontalPageMargin
                 y: accuracylabel.AlignBottom
-                text: qsTr("Höhe:")+gps.position.coordinate.altitude+qsTr("m")
+                text: qsTr("Height:")+gps.position.coordinate.altitude+qsTr("m")
                 color: Theme.secondaryHighlightColor
                 font.pixelSize: Theme.fontSizeLarge
             }
@@ -66,7 +66,7 @@ Page {
                 id: speed
                 x: Theme.horizontalPageMargin
                 y: altitude.AlignBottom
-                text:  qsTr("Geschwindigkeit:")+gps.position.speed+qsTr("m/s")
+                text:  qsTr("Speed:")+gps.position.speed.toFixed(2)+qsTr("m/s")
                 color: Theme.secondaryHighlightColor
                 font.pixelSize: Theme.fontSizeLarge
                 visible: true
@@ -98,12 +98,12 @@ Page {
                 y: iconButtons.AlignBottom
                 visible: true
                 Label {
-                    text:  qsTr("Gesendete Koordinaten:\n ")+positiontimer.sendgood+qsTr(" ok, ")+positiontimer.sendbad+qsTr(" failed")
+                    text:  qsTr("Send Coordinates \n")+positiontimer.sendgood+qsTr(" ok, ")+positiontimer.sendbad+qsTr(" failed")
                     color: Theme.secondaryHighlightColor
                     font.pixelSize: Theme.fontSizeLarge
                 }
                 Label {
-                    text:  qsTr("Timer Intervall: ")+positiontimer.interval
+                    text:  qsTr("Timer Intervall: ")+(positiontimer.interval/1000)+qsTr("sec")
                     color: Theme.secondaryHighlightColor
                     font.pixelSize: Theme.fontSizeLarge
                 }

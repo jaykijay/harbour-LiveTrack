@@ -51,7 +51,7 @@ Page {
         EnterKey.iconSource: "image://theme/icon-m-enter-next"
         EnterKey.onClicked: serverurllabel.focus = true
         onTextChanged: {
-            //positiontimer.interval:1000; ka warum das nicht geht.... todo.. direkt aktualisieren nach dem ändern..
+            positiontimer.intervald=1000;
             livetracksettings.set("intervald",text*1000)
         }
     }
