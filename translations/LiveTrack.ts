@@ -45,7 +45,7 @@
         <translation></translation>
     </message>
     <message>
-        <source> failed</source>
+        <source> failed, </source>
         <translation></translation>
     </message>
     <message>
@@ -79,6 +79,10 @@
     <message>
         <source>Send Coordinates 
 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> ignored</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

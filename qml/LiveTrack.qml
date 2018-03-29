@@ -41,11 +41,16 @@ ApplicationWindow
     PositionSource { id: gps }
     Timer {id: positiontimer}
     Page {id:settingspages;}
+    Item{
+        id:positiondata
+        property var positionvar: [];
+        property var timestampvar: [];
+    }
 
 //-----------------------Function-----------------------------//
     property bool state: false;
-    function sendData(Position) {
-        var timestamp=(new Date).getTime();
+    function sendData(Position, timestamp) {
+       // var timestamp=(new Date).getTime();
         var http = new XMLHttpRequest()
         var url = livetracksettings.getString("URL")+livetracksettings.getString("ID")+"?lat=" + Position.coordinate.latitude +"&lon="+Position.coordinate.longitude+"&timestamp="+timestamp+"&alt="+Position.coordinate.altitude+"&speed="+Position.speed+"&acc="+Position.horizontalAccuracy;
         http.open("Get", url, true);
@@ -55,7 +60,6 @@ ApplicationWindow
                state = true;
            }
            else {
-              console.warn("failed");
                 state = false;
                 }
             }

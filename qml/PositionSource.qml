@@ -5,7 +5,7 @@ PositionSource {
     id: gps
     active: true
     property bool changedbig: false
-    property var threshold: 15
+    property int threshold: 15
     property var coordHistory: []
     property bool ready: false
     property var timeActivate:  Date.now()
@@ -25,7 +25,7 @@ PositionSource {
 
         threshold = gps.position.horizontalAccuracy || 15;
 
-        if (threshold < 0 || threshold > 40) return; //bei zu kleiner Genauigkeit aufhöhren.
+        if (threshold < 0 || threshold > 60) return; //bei zu kleiner Genauigkeit aufhöhren.
 
             var coord = gps.position.coordinate;
 
