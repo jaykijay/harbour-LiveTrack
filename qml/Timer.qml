@@ -13,7 +13,7 @@ import "."
         onTriggered:{
             console.log(positiondata.positionvar.length)
             done=true;
-            if(gps.ready && gps.valid && gps.threshold>0 && gps.threshold<60 && (sendgood<1500 || gps.changedbig) ){ //sendgood===0
+            if(gps.ready && gps.valid && gps.threshold>0 && gps.threshold<60 && (sendgood<2 || gps.changedbig) ){ //sendgood===0
                        if(sendData(gps.position,(new Date).getTime()) === true) {
                         positiontimer.interval = intervald;
                         sendgood++;
