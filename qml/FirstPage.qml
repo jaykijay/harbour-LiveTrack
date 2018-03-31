@@ -98,7 +98,7 @@ Page {
                 y: iconButtons.AlignBottom
                 visible: true
                 Label {
-                    text:  qsTr("Send Coordinates \n")+positiontimer.sendgood+qsTr(" ok, ")+positiontimer.sendbad+qsTr(" failed, ")+positiontimer.ignored+qsTr(" ignored")
+                    text:  qsTr("Send Coordinates \n")+positiontimer.sendgood+qsTr(" ok, ")+positiontimer.sendbad+qsTr("failed")+"\n"+positiontimer.ignored+qsTr(" ignored ")+positiontimer.sendlater+qsTr(" resend")
                     color: Theme.secondaryHighlightColor
                     font.pixelSize: Theme.fontSizeLarge
                 }

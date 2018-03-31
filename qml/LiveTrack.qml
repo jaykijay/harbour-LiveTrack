@@ -50,10 +50,9 @@ ApplicationWindow
 //-----------------------Function-----------------------------//
     property bool state: false;
     function sendData(Position, timestamp) {
-       // var timestamp=(new Date).getTime();
         var http = new XMLHttpRequest()
         var url = livetracksettings.getString("URL")+livetracksettings.getString("ID")+"?lat=" + Position.coordinate.latitude +"&lon="+Position.coordinate.longitude+"&timestamp="+timestamp+"&alt="+Position.coordinate.altitude+"&speed="+Position.speed+"&acc="+Position.horizontalAccuracy;
-        http.open("Get", url, true);
+        http.open("Get", url, false); //true=asynchronus,false=synchronus, testing synchronous now
         http.onreadystatechange = function() {
           if (http.readyState === XMLHttpRequest.DONE) {
            if (http.status === 200) {

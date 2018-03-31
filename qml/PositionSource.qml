@@ -25,7 +25,7 @@ PositionSource {
 
         threshold = gps.position.horizontalAccuracy || 15;
 
-        if (threshold < 0 || threshold > 60) return; //bei zu kleiner Genauigkeit aufhöhren.
+        if (threshold < 0 || threshold > 60) return;
 
             var coord = gps.position.coordinate;
 

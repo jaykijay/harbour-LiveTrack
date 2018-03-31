@@ -45,7 +45,7 @@
         <translation> ok, </translation>
     </message>
     <message>
-        <source> failed, </source>
+        <source>failed</source>
         <translation>Fehler</translation>
     </message>
     <message>
@@ -83,7 +83,11 @@
 </translation>
     </message>
     <message>
-        <source> ignored</source>
+        <source> resend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> ignored </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
