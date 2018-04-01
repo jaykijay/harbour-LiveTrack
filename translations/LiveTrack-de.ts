@@ -84,11 +84,11 @@
     </message>
     <message>
         <source> resend</source>
-        <translation type="unfinished"></translation>
+        <translation> wiederholt</translation>
     </message>
     <message>
         <source> ignored </source>
-        <translation type="unfinished"></translation>
+        <translation> ignoriert</translation>
     </message>
 </context>
 <context>
