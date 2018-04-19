@@ -13,33 +13,27 @@ import "."
         interval: intervald; running: false; repeat: false
         onTriggered:{
             done=true;
-            if(gps.ready && gps.valid && gps.threshold>0 && gps.threshold<60 && (sendgood<2 || gps.changedbig) ){
-                       if(sendData(gps.position,(new Date).getTime()) === true) {
-                        positiontimer.interval = intervald;
-                        sendgood++;
-                            while(positiondata.positionvar.length >0){
-                                        var positiontemp=positiondata.positionvar.pop();
-                                        var timestamptemp=positiondata.timestampvar.pop();
-                                        if(sendData(positiontemp,timestamptemp) === true){
-                                           sendlater++;
-                                        }
-                                            else{
-                                            positiondata.positionvar.push(positiontemp);
-                                            positiondata.timestampvar.push(timestamptemp);
-                                            sendbad++;
-                                            break; //jump out of loop, because network is down again..
-                                        }
-                                    }
-                        }
+            if(gps.ready && gps.valid && gps.threshold>0 && gps.threshold<60 && (sendgood<3000 || gps.changedbig) ){ //DEBUG
+                positiondata.positionvar.push({
+                                                  "name":"postion",
+                                                  value: gps.position,
+                                               },
+                                              {
+                                                  "name":"timestamp",
+                                                  value: (new Date).getTime()
+                                               },
 
-               else{
-                       positiondata.positionvar.push(gps.position);
-                       positiondata.timestampvar.push((new Date).getTime());
-                       sendbad++;
-                    }
+                                               {
+                                                  "name":"dirty",
+                                                  value: 'false' }
+
+            );
+
+
+                while(positiondata.positionvar.length >0 && positiondata.positionvar.  ){
+                            sendData(positiondata.positionvar.length -1);
+                            }
             }
-            else ignored++;
-
             positiontimer.restart();
             done=false;
         }
