@@ -44,27 +44,32 @@ ApplicationWindow
     Item{
         id:positiondata
         property var positionvar: [];
-        property var timestampvar: [];
     }
+    property int sendgood:0;
+    property int sendlater:0;
+    property int sendbad:0;
+    property int ignored:0;
 
 //-----------------------Function-----------------------------//
     property bool state: false;
     function sendData(index) {
         var http = new XMLHttpRequest()
-        var url = livetracksettings.getString("URL")+livetracksettings.getString("ID")+"?lat=" + Position.coordinate.latitude +"&lon="+Position.coordinate.longitude+"&timestamp="+timestamp+"&alt="+Position.coordinate.altitude+"&speed="+Position.speed+"&acc="+Position.horizontalAccuracy;
-        http.open("Get", url, false); //true=asynchronus,false=synchronus, testing synchronous now
+        var url = livetracksettings.getString("URL")+livetracksettings.getString("ID")+"?lat=" + positiondata.positionvar[index].position.coordinate.latitude +"&lon="+ positiondata.positionvar[index].position.coordinate.longitude+"&timestamp="+ positiondata.positionvar[index].timestamp+"&alt="+ positiondata.positionvar[index].position.coordinate.altitude+"&speed="+ positiondata.positionvar[index].position.speed+"&acc="+ positiondata.positionvar[index].position.horizontalAccuracy;
+        http.open("Get", url, true); //true=asynchronus,false=synchronus
         http.onreadystatechange = function() {
           if (http.readyState === XMLHttpRequest.DONE) {
            if (http.status === 200) {
-               state = true;
+                     positiondata.positionvar.splice(index, 1);
+               sendgood++;
            }
            else {
-                state = false;
+                positiondata.positionvar[index].dirty=false;
+               sendbad++;
                 }
             }
         };
         http.send();
-       return state;
+       return true;
 }
 //------------------------------------------------------------//
 
