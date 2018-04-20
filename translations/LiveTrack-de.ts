@@ -82,14 +82,6 @@
         <translation>Gesendete Koordinaten:
 </translation>
     </message>
-    <message>
-        <source> resend</source>
-        <translation> wiederholt</translation>
-    </message>
-    <message>
-        <source> ignored </source>
-        <translation> ignoriert</translation>
-    </message>
 </context>
 <context>
     <name>SettingsPages</name>

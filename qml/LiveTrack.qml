@@ -46,15 +46,13 @@ ApplicationWindow
         property var positionvar: [];
     }
     property int sendgood:0;
-    property int sendlater:0;
     property int sendbad:0;
-    property int ignored:0;
 
 //-----------------------Function-----------------------------//
     property bool state: false;
     function sendData(index) {
         var http = new XMLHttpRequest()
-        var url = livetracksettings.getString("URL")+livetracksettings.getString("ID")+"?lat=" + positiondata.positionvar[index].position.coordinate.latitude +"&lon="+ positiondata.positionvar[index].position.coordinate.longitude+"&timestamp="+ positiondata.positionvar[index].timestamp+"&alt="+ positiondata.positionvar[index].position.coordinate.altitude+"&speed="+ positiondata.positionvar[index].position.speed+"&acc="+ positiondata.positionvar[index].position.horizontalAccuracy;
+        var url = livetracksettings.getString("URL")+livetracksettings.getString("ID")+"?lat=" + positiondata.positionvar[index].positn.coordinate.latitude +"&lon="+ positiondata.positionvar[index].positn.coordinate.longitude+"&timestamp="+ positiondata.positionvar[index].timestamp+"&alt="+ positiondata.positionvar[index].positn.coordinate.altitude+"&speed="+ positiondata.positionvar[index].positn.speed+"&acc="+ positiondata.positionvar[index].positn.horizontalAccuracy;
         http.open("Get", url, true); //true=asynchronus,false=synchronus
         http.onreadystatechange = function() {
           if (http.readyState === XMLHttpRequest.DONE) {

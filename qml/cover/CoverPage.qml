@@ -11,7 +11,7 @@ CoverBackground {
     Label {
 //        horizontalAlignment:Text.AlignHCenter
 //        verticalAlignment:Text.AlignVCenter
-        text:  qsTr("Stats:\n ")+positiontimer.sendgood+qsTr(" ok,\n ")+positiontimer.sendbad+qsTr(" failed")
+        text:  qsTr("Stats:\n ")+sendgood+qsTr(" ok,\n ")+sendbad+qsTr(" failed")
         color: Theme.secondaryHighlightColor
         font.pixelSize: Theme.fontSizeLarge
     }

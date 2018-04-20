@@ -81,14 +81,6 @@
 </source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source> ignored </source>
-        <translation> ignoriert </translation>
-    </message>
-    <message>
-        <source> resend</source>
-        <translation> nachgeholt</translation>
-    </message>
 </context>
 <context>
     <name>SettingsPages</name>
