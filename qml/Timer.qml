@@ -1,9 +1,11 @@
 import QtQuick 2.0
 import "."
+import QtPositioning 5.3
 
     Timer {
         property bool done: false
         property var coordPrev: null
+        property var coord: null
         property int tempindextimer: 0
         property int threshold: 15
         property int intervald:livetracksettings.get("intervald");
@@ -18,14 +20,17 @@ import "."
             threshold = gps.position.horizontalAccuracy || 15;
         if (threshold > 0 && threshold < 60){ //stop if accuracy is too bad -> under 60meters
 
-              var coord = gps.position.coordinate;
+              coord = gps.position.coordinate;
+            console.log("coord:" + coord +"\n");
+            console.log("coordprev:" + coordPrev +"\n");
 
-              if ((coordPrev.distanceTo(coord) > threshold) || (sendgood<2) || debug || coordPrev === null  ) { //coordPrev = NULL when the app is launching
+              if (( (sendgood<2) || debug || coordPrev === null || (coordPrev.distanceTo(coord) > threshold)) ) { //coordPrev = NULL when the app is launching
                console.log("Send Data \n");
                positiondata.positionvar.push({   positn: gps.position,
                                                   timestamp: (new Date).getTime(),
                                                   dirty: false });
-               coordPrev = gps.position.coordinate;
+                coordPrev = QtPositioning.coordinate(coord.latitude, coord.longitude);
+
 
                 for(tempindextimer=0;positiondata.positionvar.length >0 && positiondata.positionvar.length > tempindextimer ;tempindextimer++){
                     if( positiondata.positionvar[tempindextimer].dirty === false ){
@@ -34,6 +39,7 @@ import "."
 
                 }}
               else ignored++;
+              console.log("Distance:" + coordPrev.distanceTo(coord) +"\n");
                         }
 
 
