@@ -21,11 +21,8 @@ import QtPositioning 5.3
         if (threshold > 0 && threshold < 60){ //stop if accuracy is too bad -> under 60meters
 
               coord = gps.position.coordinate;
-            console.log("coord:" + coord +"\n");
-            console.log("coordprev:" + coordPrev +"\n");
 
               if (( (sendgood<2) || debug || coordPrev === null || (coordPrev.distanceTo(coord) > threshold)) ) { //coordPrev = NULL when the app is launching
-               console.log("Send Data \n");
                positiondata.positionvar.push({   positn: gps.position,
                                                   timestamp: (new Date).getTime(),
                                                   dirty: false });
@@ -39,7 +36,6 @@ import QtPositioning 5.3
 
                 }}
               else ignored++;
-              console.log("Distance:" + coordPrev.distanceTo(coord) +"\n");
                         }
 
 
