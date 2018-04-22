@@ -4,10 +4,6 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <source> failed</source>
-        <translation> Fehler</translation>
-    </message>
-    <message>
         <source>Livetrack</source>
         <translation type="unfinished"></translation>
     </message>
@@ -19,6 +15,14 @@
     <message>
         <source> ok,
  </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> to send </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> ignored </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -39,14 +43,6 @@
     <message>
         <source>Speed:</source>
         <translation>Geschwindigkeit:</translation>
-    </message>
-    <message>
-        <source> ok, </source>
-        <translation> ok, </translation>
-    </message>
-    <message>
-        <source>failed</source>
-        <translation>Fehler</translation>
     </message>
     <message>
         <source>Timer Intervall: </source>
@@ -77,10 +73,21 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Send Coordinates 
+        <source>Statistics: 
 </source>
-        <translation>Gesendete Koordinaten:
-</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> send ok, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> to send </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> ignored </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

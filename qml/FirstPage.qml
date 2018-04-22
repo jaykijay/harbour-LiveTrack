@@ -89,6 +89,13 @@ Page {
                     onClicked: positiontimer.start();
                     enabled: !(positiontimer.running || positiontimer.done)
                 }
+                IconButton {
+                    id: debug
+                    icon.source: "image://theme/icon-l-clear"
+                    onClicked: positiontimer.debug = true;
+                    enabled: !positiontimer.debug
+
+                }
             }
             Column {
                 id: statistics
@@ -98,7 +105,7 @@ Page {
                 y: iconButtons.AlignBottom
                 visible: true
                 Label {
-                    text:  qsTr("Send Coordinates \n")+sendgood+qsTr(" ok, ")+sendbad+qsTr("failed")
+                    text:  qsTr("Statistics: \n")+sendgood+qsTr(" send ok, ")+(positiondata.positionvar.length -1) +qsTr(" to send ") + positiontimer.ignored +qsTr(" ignored ")
                     color: Theme.secondaryHighlightColor
                     font.pixelSize: Theme.fontSizeLarge
                 }

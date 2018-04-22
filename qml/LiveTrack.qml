@@ -46,7 +46,6 @@ ApplicationWindow
         property var positionvar: [];
     }
     property int sendgood:0;
-    property int sendbad:0;
 
 //-----------------------Function-----------------------------//
     property bool state: false;
@@ -62,7 +61,6 @@ ApplicationWindow
            }
            else {
                 positiondata.positionvar[index].dirty=false;
-               sendbad++;
                 }
             }
         };

@@ -4,10 +4,6 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <source> failed</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Livetrack</source>
         <translation type="unfinished"></translation>
     </message>
@@ -19,6 +15,14 @@
     <message>
         <source> ok,
  </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> to send </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> ignored </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -38,14 +42,6 @@
     </message>
     <message>
         <source>Speed:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source> ok, </source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>failed</source>
         <translation></translation>
     </message>
     <message>
@@ -77,8 +73,20 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Send Coordinates 
+        <source>Statistics: 
 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> send ok, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> to send </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> ignored </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
