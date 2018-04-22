@@ -105,7 +105,7 @@ Page {
                 y: iconButtons.AlignBottom
                 visible: true
                 Label {
-                    text:  qsTr("Statistics: \n")+sendgood+qsTr(" send ok, ")+(positiondata.positionvar.length -1) +qsTr(" to send ") + positiontimer.ignored +qsTr(" ignored ")
+                    text:  qsTr("Statistics: \n")+sendgood+qsTr(" send ok, ")+(positiondata.positionvar.length) +qsTr(" to send, ") + positiontimer.ignored +qsTr(" ignored ")
                     color: Theme.secondaryHighlightColor
                     font.pixelSize: Theme.fontSizeLarge
                 }
