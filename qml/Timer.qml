@@ -30,7 +30,7 @@ import QtPositioning 5.3
 
 
                 for(tempindextimer=0;positiondata.positionvar.length >0 && positiondata.positionvar.length > tempindextimer ;tempindextimer++){
-                    if( positiondata.positionvar[tempindextimer].dirty === false ){
+                    if( positiondata.positionvar[tempindextimer].dirty === false || (positiondata.positionvar.timestamp > ((new Date).getTime() +180)) ){ //3minutes in sending
                         positiondata.positionvar[tempindextimer].dirty = true;
                         sendData(tempindextimer);}
 
