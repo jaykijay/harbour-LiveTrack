@@ -5,11 +5,6 @@ PositionSource {
     id: gps
     active: true
     property bool ready: false
-    property var timeActivate:  Date.now()
-
-    onActiveChanged: {
-        if (gps.active) gps.timeActivate = Date.now();
-    }
 
     onPositionChanged: {
         gps.ready = gps.position.latitudeValid &&

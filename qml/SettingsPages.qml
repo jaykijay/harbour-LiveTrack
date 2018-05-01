@@ -55,6 +55,14 @@ Page {
             livetracksettings.set("intervald",text*1000)
         }
     }
+    Button {
+        id: debug
+        text: "debug"
+        onClicked: positiontimer.debug = true;
+        enabled: !positiontimer.debug
+
+    }
 }
+
 }
 

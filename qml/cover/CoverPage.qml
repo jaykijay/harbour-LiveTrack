@@ -11,7 +11,7 @@ CoverBackground {
     Label {
 //        horizontalAlignment:Text.AlignHCenter
 //        verticalAlignment:Text.AlignVCenter
-        text:  qsTr("Stats:\n ")+sendgood+qsTr(" ok,\n ")+(positiondata.positionvar.length) +qsTr(" to send ") + positiontimer.ingored +qsTr(" ignored ")
+        text:  qsTr("Stats:\n ")+sendgood+qsTr(" ok,\n ")+(positiondata.positionvar.length) +qsTr(" to send,\n") + positiontimer.ignored +qsTr(" ignored ")
         color: Theme.secondaryHighlightColor
         font.pixelSize: Theme.fontSizeLarge
     }

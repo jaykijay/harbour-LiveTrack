@@ -18,11 +18,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source> to send </source>
+        <source> ignored </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source> ignored </source>
+        <source> to send,
+</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -69,10 +70,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>m/s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Statistics: 
 </source>
         <translation type="unfinished"></translation>
@@ -87,6 +84,10 @@
     </message>
     <message>
         <source> to send, </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>km/h</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

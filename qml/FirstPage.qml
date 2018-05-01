@@ -66,7 +66,7 @@ Page {
                 id: speed
                 x: Theme.horizontalPageMargin
                 y: altitude.AlignBottom
-                text:  qsTr("Speed:")+gps.position.speed.toFixed(2)+qsTr("m/s")
+                text:  qsTr("Speed:")+Math.round(gps.position.speed * 3.6)+qsTr("km/h")
                 color: Theme.secondaryHighlightColor
                 font.pixelSize: Theme.fontSizeLarge
                 visible: true
@@ -90,10 +90,13 @@ Page {
                     enabled: !(positiontimer.running || positiontimer.done)
                 }
                 IconButton {
-                    id: debug
+                    id: sendold
                     icon.source: "image://theme/icon-l-clear"
-                    onClicked: positiontimer.debug = true;
-                    enabled: !positiontimer.debug
+                    onClicked: {  for(var i=0;positiondata.positionvar.length >0 && positiondata.positionvar.length > i ;i++){
+                                    sendData(i);
+                                }
+                                }
+                    enabled: true
 
                 }
             }
@@ -105,7 +108,7 @@ Page {
                 y: iconButtons.AlignBottom
                 visible: true
                 Label {
-                    text:  qsTr("Statistics: \n")+sendgood+qsTr(" send ok, ")+(positiondata.positionvar.length) +qsTr(" to send, ") + positiontimer.ignored +qsTr(" ignored ")
+                    text:  qsTr("Statistics: \n")+sendgood+qsTr(" send ok, ")+ positiondata.positionvar.length +qsTr(" to send, ") + positiontimer.ignored +qsTr(" ignored ")
                     color: Theme.secondaryHighlightColor
                     font.pixelSize: Theme.fontSizeLarge
                 }
