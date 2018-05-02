@@ -2,6 +2,49 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
+    <name>About</name>
+    <message>
+        <source>By Jahn Kohlhas</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send E-Mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Licensed under GNU GPLv3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Credits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About Livetrack</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source on GitHub</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This project uses code from other Developers, which is either released under GNU GPLv3 or GNU GPLv2. Namely Source from Whogo maps by Otsaloma and About Page from Piepmatz by Sebastian Wolf (Ygriega). 
+
+Icon was made by goncharov(@gregguh)
+
+Thanks to: 
+
+@ajftw_ani ,my love -&gt; for testing 
+
+my Brother -&gt; for testing 
+
+otsaloma,ygriega for their really good code 
+
+@DylanVanAssche for helping me with some bugs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CoverPage</name>
     <message>
         <source>Livetrack</source>
@@ -10,7 +53,7 @@
     <message>
         <source>Stats:
  </source>
-        <translation type="unfinished"></translation>
+        <translation>Statistiken</translation>
     </message>
     <message>
         <source> ok,
@@ -19,12 +62,12 @@
     </message>
     <message>
         <source> ignored </source>
-        <translation type="unfinished"></translation>
+        <translation>ignoriert</translation>
     </message>
     <message>
         <source> to send,
-</source>
-        <translation type="unfinished"></translation>
+ </source>
+        <translation>zu senden</translation>
     </message>
 </context>
 <context>
@@ -34,35 +77,7 @@
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <source>Accuracy:</source>
-        <translation>Genauigkeit:</translation>
-    </message>
-    <message>
-        <source>Height:</source>
-        <translation>Höhe:</translation>
-    </message>
-    <message>
-        <source>Speed:</source>
-        <translation>Geschwindigkeit:</translation>
-    </message>
-    <message>
-        <source>Timer Intervall: </source>
-        <translation>Timer Intervall: </translation>
-    </message>
-    <message>
-        <source>sec</source>
-        <translation>sec</translation>
-    </message>
-    <message>
         <source>LiveTracker</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Longitude:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Latitude:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -70,25 +85,60 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Statistics: 
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> send ok, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> ignored </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> to send, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>km/h</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Longitude</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Latitude</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Accuracy</source>
+        <translation>Genauigkeit</translation>
+    </message>
+    <message>
+        <source>Height</source>
+        <translation>Höhe</translation>
+    </message>
+    <message>
+        <source>Speed</source>
+        <translation>Geschwindigkeit</translation>
+    </message>
+    <message>
+        <source> sec</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Statistics</source>
+        <translation>Statistiken</translation>
+    </message>
+    <message>
+        <source>fetching</source>
+        <translation>hole..</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send ok</source>
+        <translation>Gesendet</translation>
+    </message>
+    <message>
+        <source>To send</source>
+        <translation>Zu senden</translation>
+    </message>
+    <message>
+        <source>Ignored</source>
+        <translation>Ingoriert</translation>
+    </message>
+    <message>
+        <source>Timer Interval</source>
+        <translation>Timer Intervall</translation>
     </message>
 </context>
 <context>

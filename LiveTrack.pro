@@ -27,9 +27,32 @@ DISTFILES += qml/LiveTrack.qml \
     translations/*.ts \
     LiveTrack.desktop \
     qml/PositionSource.qml \
-    qml/Timer.qml
+    qml/Timer.qml \
+    qml/DetailItem2.qml \
+    qml/About.qml \
+    icons/livetrack.svg \
+    icons/108x108/example.png \
+    icons/128x128/example.png \
+    icons/172x172/example.png \
+    icons/86x86/example.png \
+    icons/livetrack.svg \
+    icons/108x108/livetrack-108.png \
+    icons/128x128/livetrack-128.png \
+    icons/172x172/livetrack-172.png \
+    icons/86x86/livetrack-86.png \
+    icons/livetrack.svg \
+    icons/108x108/Livetrack.png \
+    icons/128x128/Livetrack.png \
+    icons/172x172/Livetrack.png \
+    icons/86x86/Livetrack.png \
+    icons/livetrack.svg \
+    icons/108x108/LiveTrack.png \
+    icons/128x128/LiveTrack.png \
+    icons/172x172/LiveTrack.png \
+    icons/86x86/LiveTrack.png \
+    icons/livetrack.svg
 
-SAILFISHAPP_ICONS = 86x86 108x108 128x128
+SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 QT += qml quick positioning sensors
 
 

@@ -57,9 +57,10 @@ Page {
     }
     Button {
         id: debug
-        text: "debug"
+        text: "Debug"
         onClicked: positiontimer.debug = true;
         enabled: !positiontimer.debug
+        anchors.horizontalCenter: parent.horizontalCenter
 
     }
 }

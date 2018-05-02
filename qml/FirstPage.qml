@@ -14,6 +14,10 @@ Page {
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
         PullDownMenu {
             MenuItem {
+                text: qsTr("About")
+                onClicked: pageStack.push(Qt.resolvedUrl("About.qml"))
+            }
+            MenuItem {
                 text: qsTr("Settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("SettingsPages.qml"))
             }
@@ -27,67 +31,54 @@ Page {
         Column {
             id: column
             width: page.width
-            spacing: Theme.paddingLarge
+            spacing: Theme.paddingMedium
             PageHeader {
                 title: qsTr("LiveTracker")
             }
-            Label {
-                id:longitudelabel
-                x: Theme.horizontalPageMargin
-                text: qsTr("Longitude:")+gps.position.coordinate.longitude
-                color: Theme.secondaryHighlightColor
-                font.pixelSize: Theme.fontSizeLarge
+            DetailItem2 {
+                label: qsTr("Longitude")
+                value: gps.position.coordinate.longitude
             }
-            Label {
-                id: latitudelabel
-                x: Theme.horizontalPageMargin
-                y: longitudelabel.AlignBottom
-                text: qsTr("Latitude:")+gps.position.coordinate.latitude
-                color: Theme.secondaryHighlightColor
-                font.pixelSize: Theme.fontSizeLarge
+            DetailItem2 {
+                label: qsTr("Latitude")
+                value: gps.position.coordinate.latitude
             }
-            Label {
-                id: accuracylabel
-                x: Theme.horizontalPageMargin
-                y: longitudelabel.AlignBottom
-                text: qsTr("Accuracy:")+gps.position.horizontalAccuracy+qsTr("m")
-                color: Theme.secondaryHighlightColor
-                font.pixelSize: Theme.fontSizeLarge
+            DetailItem2 {
+                label: qsTr("Accuracy")
+                value:gps.position.horizontalAccuracy+qsTr("m")
             }
-            Label {
-                id: altitude
-                x: Theme.horizontalPageMargin
-                y: accuracylabel.AlignBottom
-                text: qsTr("Height:")+gps.position.coordinate.altitude+qsTr("m")
-                color: Theme.secondaryHighlightColor
-                font.pixelSize: Theme.fontSizeLarge
+            DetailItem2 {
+                label: qsTr("Height")
+                value: {if (gps.position.altitudeValid) gps.position.coordinate.altitude+qsTr("m")
+                        else qsTr("fetching")}
             }
-            Label {
-                id: speed
-                x: Theme.horizontalPageMargin
-                y: altitude.AlignBottom
-                text:  qsTr("Speed:")+Math.round(gps.position.speed * 3.6)+qsTr("km/h")
-                color: Theme.secondaryHighlightColor
-                font.pixelSize: Theme.fontSizeLarge
-                visible: true
+            DetailItem2 {
+                label: qsTr("Speed")
+                value: {if (gps.position.speedValid) Math.round(gps.position.speed * 3.6)+qsTr("km/h")
+                        else "0"}
             }
-
             Row {
                 id: iconButtons
                 spacing: Theme.paddingLarge
                 anchors.horizontalCenter: parent.horizontalCenter
-                y: speed.AlignBottom
-                IconButton {
-                    id: pause
-                    icon.source: "image://theme/icon-l-pause"
-                    onClicked:  positiontimer.stop();
-                    enabled: (positiontimer.running || positiontimer.done)
-                }
                 IconButton {
                     id: play
-                    icon.source: "image://theme/icon-l-play"
-                    onClicked: positiontimer.start();
-                    enabled: !(positiontimer.running || positiontimer.done)
+                    icon.source:
+                        if(!(positiontimer.running || positiontimer.done)){
+                            "image://theme/icon-l-play"
+                        }
+                        else{
+                            "image://theme/icon-l-pause"
+                        }
+                    onClicked:
+                        if(!(positiontimer.running || positiontimer.done)){
+                            positiontimer.start();
+                        }
+                        else{
+                           positiontimer.stop();
+                        }
+
+                    enabled: true
                 }
                 IconButton {
                     id: sendold
@@ -100,25 +91,34 @@ Page {
 
                 }
             }
-            Column {
-                id: statistics
-                spacing: Theme.paddingLarge
+            Separator {
                 width: parent.width
-                x: Theme.horizontalPageMargin
-                y: iconButtons.AlignBottom
-                visible: true
-                Label {
-                    text:  qsTr("Statistics: \n")+sendgood+qsTr(" send ok, ")+ positiondata.positionvar.length +qsTr(" to send, ") + positiontimer.ignored +qsTr(" ignored ")
-                    color: Theme.secondaryHighlightColor
-                    font.pixelSize: Theme.fontSizeLarge
-                }
-                Label {
-                    text:  qsTr("Timer Intervall: ")+(positiontimer.interval/1000)+qsTr("sec")
-                    color: Theme.secondaryHighlightColor
-                    font.pixelSize: Theme.fontSizeLarge
+                color: Theme.primaryColor
+                horizontalAlignment: Qt.AlignHCenter
+            }
+                PageHeader {
+                   id:header
+                   title: qsTr("Statistics")
                 }
 
-            }
+                DetailItem2 {
+                    label: qsTr("Send ok")
+                    value: sendgood
+                }
+                DetailItem2 {
+                    label: qsTr("To send")
+                    value: positiondata.positionvar.length
+                }
+                DetailItem2 {
+                    label: qsTr("Ignored")
+                    value: positiontimer.ignored
+                }
+                DetailItem2 {
+                    label: qsTr("Timer Interval")
+                    value:  (positiontimer.interval/1000)+qsTr(" sec")
+                }
+
+
         }
     }
 }
