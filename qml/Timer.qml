@@ -7,7 +7,8 @@ import QtPositioning 5.3
         property var coordPrev: null
         property var coord: null
         property var tempspeed: null
-        property var tempaccuracy: null
+        property int tempaccuracy: 0
+        property int tempaltitude: 0
         property int tempindextimer: 0
         property int threshold: 15
         property int intervald:livetracksettings.get("intervald");
@@ -26,12 +27,14 @@ import QtPositioning 5.3
               coord = gps.position.coordinate;
               tempspeed = gps.position.speed;
               tempaccuracy= gps.position.horizontalAccuracy;
+              tempaltitude= gps.position.coordinate.altitude;
 
               if (( (sendgood<2) || debug || coordPrev === null || (coordPrev.distanceTo(coord) > threshold)) ) { //coordPrev = NULL when the app is launching
                positiondata.positionvar.push({   positn: QtPositioning.coordinate(coord.latitude, coord.longitude), //can't do direct, it will just link it -.-
                                                  speed: tempspeed,
                                                  timestamp: (new Date).getTime(),
                                                  horizontalAccuracy: tempaccuracy,
+                                                 alt: tempaltitude,
                                                  dirty: 0 });
                  // console.log(" variable:"+tempspeed +"\n");
                 //  console.log(positiondata.positionvar[positiondata.positionvar.length -1].speed +" speed: "+ positiondata.positionvar[positiondata.positionvar.length -1].horizontalAccuracy +"\n");

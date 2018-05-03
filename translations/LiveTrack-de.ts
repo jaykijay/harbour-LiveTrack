@@ -52,15 +52,15 @@ otsaloma,ygriega for their really good code
     </message>
     <message>
         <source>Send ok</source>
-        <translation type="unfinished">Gesendet</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>To send</source>
-        <translation type="unfinished">Zu senden</translation>
+        <translation>Offen</translation>
     </message>
     <message>
         <source>Ignored</source>
-        <translation type="unfinished">Ingoriert</translation>
+        <translation>Egal</translation>
     </message>
 </context>
 <context>
@@ -127,7 +127,7 @@ otsaloma,ygriega for their really good code
     </message>
     <message>
         <source>Ignored</source>
-        <translation>Ingoriert</translation>
+        <translation>Ignoriert</translation>
     </message>
     <message>
         <source>Timer Interval</source>

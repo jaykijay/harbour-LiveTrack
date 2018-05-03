@@ -51,7 +51,7 @@ ApplicationWindow
     property bool state: false;
     function sendData(index) {
         var http = new XMLHttpRequest()
-        var url = livetracksettings.getString("URL")+livetracksettings.getString("ID")+"?lat=" + positiondata.positionvar[index].positn.latitude +"&lon="+ positiondata.positionvar[index].positn.longitude+"&timestamp="+ positiondata.positionvar[index].timestamp+"&alt="+ positiondata.positionvar[index].positn.altitude+"&speed="+ positiondata.positionvar[index].speed+"&acc="+ positiondata.positionvar[index].horizontalAccuracy;
+        var url = livetracksettings.getString("URL")+livetracksettings.getString("ID")+"?lat=" + positiondata.positionvar[index].positn.latitude +"&lon="+ positiondata.positionvar[index].positn.longitude+"&timestamp="+ positiondata.positionvar[index].timestamp+"&alt="+ positiondata.positionvar[index].alt+"&speed="+ positiondata.positionvar[index].speed+"&acc="+ positiondata.positionvar[index].horizontalAccuracy;
         http.open("Get", url, true); //true=asynchronus,false=synchronus
         http.onreadystatechange = function() {
           if (http.readyState === XMLHttpRequest.DONE) {
