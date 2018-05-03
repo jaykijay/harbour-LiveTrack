@@ -64,14 +64,14 @@ Page {
                 IconButton {
                     id: play
                     icon.source:
-                        if(!(positiontimer.running || positiontimer.done)){
+                        if(!(positiontimer.running)){
                             "image://theme/icon-l-play"
                         }
                         else{
                             "image://theme/icon-l-pause"
                         }
                     onClicked:
-                        if(!(positiontimer.running || positiontimer.done)){
+                        if(!(positiontimer.running)){
                             positiontimer.start();
                         }
                         else{
@@ -107,7 +107,7 @@ Page {
                 }
                 DetailItem2 {
                     label: qsTr("To send")
-                    value: positiondata.positionvar.length
+                    value: positiontimer.tosend
                 }
                 DetailItem2 {
                     label: qsTr("Ignored")

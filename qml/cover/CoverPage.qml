@@ -3,17 +3,26 @@ import Sailfish.Silica 1.0
 import "../"
 
 CoverBackground {
-    Label {
+    Column {
+        id: column
+        width: parent.width
+        spacing: Theme.paddingSmall
+    PageHeader {
         id: label
-        anchors.centerIn: parent
-        text: qsTr("Livetrack")
+        title: qsTr("Livetrack")
     }
-    Label {
-//        horizontalAlignment:Text.AlignHCenter
-//        verticalAlignment:Text.AlignVCenter
-        text:  qsTr("Stats:\n ")+sendgood+qsTr(" ok,\n ")+(positiondata.positionvar.length) +qsTr(" to send,\n ") + positiontimer.ignored +qsTr(" ignored ")
-        color: Theme.secondaryHighlightColor
-        font.pixelSize: Theme.fontSizeLarge
+    DetailItem {
+        label: qsTr("Send ok")
+        value: sendgood
+    }
+    DetailItem {
+        label: qsTr("To send")
+        value: positiontimer.tosend
+    }
+    DetailItem {
+        label: qsTr("Ignored")
+        value: positiontimer.ignored
+    }
     }
     CoverActionList {
        id: coverAction
@@ -33,3 +42,6 @@ CoverBackground {
 
               }
 
+
+
+//+(positiontimer.tosend) +qsTr(" to send,\n ") + positiontimer.ignored +qsTr(" ignored ")

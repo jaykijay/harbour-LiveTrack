@@ -3,7 +3,7 @@ import "."
 import QtPositioning 5.3
 
     Timer {
-        property bool done: false
+        property int tosend: 0
         property var coordPrev: null
         property var coord: null
         property var tempspeed: null
@@ -17,7 +17,8 @@ import QtPositioning 5.3
         id: positiontimer
         interval: intervald; running: false; repeat: false
         onTriggered:{
-            done=true;
+            tosend = positiondata.positionvar.length;
+       //     console.log("Length:"+tosend+"\n");
    if(gps.ready && gps.valid) {
             threshold = gps.position.horizontalAccuracy || 15;
         if (threshold > 0 && threshold < 60){ //stop if accuracy is too bad -> under 60meters
@@ -51,6 +52,5 @@ import QtPositioning 5.3
               }}
 
             positiontimer.restart();
-            done=false;
         }
     }

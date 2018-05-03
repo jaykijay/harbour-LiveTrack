@@ -51,22 +51,15 @@ otsaloma,ygriega for their really good code
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Stats:
- </source>
+        <source>Send ok</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source> ok,
- </source>
+        <source>To send</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source> ignored </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> to send,
- </source>
+        <source>Ignored</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
