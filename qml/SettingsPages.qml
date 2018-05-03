@@ -51,8 +51,10 @@ Page {
         EnterKey.iconSource: "image://theme/icon-m-enter-next"
         EnterKey.onClicked: serverurllabel.focus = true
         onTextChanged: {
-            positiontimer.intervald=1000;
+            if(text >0.1){
+            positiontimer.intervald=text*1000;
             livetracksettings.set("intervald",text*1000)
+            }
         }
     }
     Button {

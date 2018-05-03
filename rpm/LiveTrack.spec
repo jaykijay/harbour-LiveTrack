@@ -14,7 +14,7 @@ Name:       LiveTrack
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    LiveTracker
 Version:    0.6
-Release:    3
+Release:    4
 Group:      Qt/Qt
 License:    GPLv3
 URL:        https://github.com/jaykijay/harbour-LiveTrack/
