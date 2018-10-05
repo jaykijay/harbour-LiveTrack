@@ -50,7 +50,8 @@ DISTFILES += qml/LiveTrack.qml \
     icons/128x128/LiveTrack.png \
     icons/172x172/LiveTrack.png \
     icons/86x86/LiveTrack.png \
-    icons/livetrack.svg
+    icons/livetrack.svg \
+    qml/FirstPage.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 QT += qml quick positioning sensors

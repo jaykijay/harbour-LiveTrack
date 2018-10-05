@@ -73,9 +73,11 @@ Page {
                     onClicked:
                         if(!(positiontimer.running)){
                             positiontimer.start();
+                            gps.start();
                         }
                         else{
                            positiontimer.stop();
+                            gps.stop();
                         }
 
                     enabled: true
