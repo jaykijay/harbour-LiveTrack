@@ -34,8 +34,9 @@ CoverBackground {
                         onTriggered: {
                             if (positiontimer.running || positiontimer.done) {
                                 positiontimer.stop();
+                                gps.stop();
                                 }
-                           else{ positiontimer.start();}
+                           else{ positiontimer.start(); gps.start();}
                         }
                    }
                 }
