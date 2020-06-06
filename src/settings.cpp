@@ -9,7 +9,7 @@ void Settings::initialize()
     if (!this->contains("URL"))
         this->setValue("URL", "https://my.url.local/trackme/");
     if (!this->contains("ID"))
-        this->setValue("ID", "2711/jolla");
+        this->setValue("ID", "jolla");
     if (!this->contains("intervald"))
         this->setValue("intervald", 1000);
 
