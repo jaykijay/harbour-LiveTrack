@@ -57,6 +57,15 @@ Page {
             }
         }
     }
+    TextSwitch {
+        id: autostart
+        text: "Autostart"
+        checked: livetracksettings.getBool("autostart")
+        description: "Start tracking automatically when LiveTracker starts"
+        onCheckedChanged: {
+            livetracksettings.set("autostart",checked)
+        }
+    }
     Button {
         id: debug
         text: "Debug"

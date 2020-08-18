@@ -70,16 +70,9 @@ Page {
                         else{
                             "image://theme/icon-l-pause"
                         }
-                    onClicked:
-                        if(!(positiontimer.running)){
-                            positiontimer.start();
-                            gps.start();
-                        }
-                        else{
-                           positiontimer.stop();
-                            gps.stop();
-                        }
-
+                    onClicked: {
+                        playClicked();
+                    }
                     enabled: true
                 }
                 IconButton {
@@ -121,6 +114,22 @@ Page {
                 }
 
 
+        }
+    }
+    function playClicked() {
+        if(!(positiontimer.running)){
+            positiontimer.start();
+            gps.start();
+        }
+        else{
+           positiontimer.stop();
+           gps.stop();
+        }
+    }
+
+    Component.onCompleted: {
+        if(livetracksettings.getBool("autostart")) {
+            playClicked();
         }
     }
 }

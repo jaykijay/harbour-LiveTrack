@@ -12,6 +12,8 @@ void Settings::initialize()
         this->setValue("ID", "jolla");
     if (!this->contains("intervald"))
         this->setValue("intervald", 1000);
+    if (!this->contains("autostart"))
+        this->setValue("autostart", false);
 
 }
 void Settings::set(const QString& key, const QVariant &value){
