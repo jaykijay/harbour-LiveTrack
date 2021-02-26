@@ -19,6 +19,8 @@ https://x.x/apps/phonetrack/logGet/g9c43b634e67dc70bdaa50e345b1492c/yourname?lat
 Cut it to:
 https://x.x/apps/phonetrack/logGet/g9c43b634e67dc70bdaa50e345b1492c/
 
+![Screenshot](https://github.com/jaykijay/harbour-LiveTrack/raw/master/Screenshot_20210226_102528.png?raw=true)
+
 and enter this to ServerURL
 then enter whatever ID you want under ID texfield,
 go back and click play to start logging.
