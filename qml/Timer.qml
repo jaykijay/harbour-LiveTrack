@@ -1,6 +1,6 @@
-import QtQuick 2.0
+import QtQuick 2.6
 import "."
-import QtPositioning 5.3
+import QtPositioning 5.4
 
     Timer {
         property int tosend: 0

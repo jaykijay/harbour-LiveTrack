@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.6
 import Sailfish.Silica 1.0
 import "."
 
@@ -49,8 +49,7 @@ Page {
             }
             DetailItem2 {
                 label: qsTr("Height")
-                value: {if (gps.position.altitudeValid) gps.position.coordinate.altitude+qsTr("m")
-                        else qsTr("fetching")}
+                value: { gps.position.coordinate.altitude+qsTr("m")}
             }
             DetailItem2 {
                 label: qsTr("Speed")
@@ -85,8 +84,9 @@ Page {
                 IconButton {
                     id: sendold
                     icon.source: "image://theme/icon-l-clear"
-                    onClicked: {  for(var i=0;positiondata.positionvar.length >0 && positiondata.positionvar.length > i ;i++){
+                    onClicked: {    for(var i=0;positiondata.positionvar.length >0 && positiondata.positionvar.length > i ;i++){
                                     sendData(i);
+                                    tosend = positiondata.positionvar.length;
                                 }
                                 }
                     enabled: true

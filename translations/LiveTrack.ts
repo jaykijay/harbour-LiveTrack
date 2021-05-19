@@ -110,10 +110,6 @@ otsaloma,ygriega for their really good code
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>fetching</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>

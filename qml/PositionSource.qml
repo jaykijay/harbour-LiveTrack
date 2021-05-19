@@ -1,5 +1,5 @@
-import QtQuick 2.0
-import QtPositioning 5.3
+import QtQuick 2.6
+import QtPositioning 5.4
 
 PositionSource {
     id: gps

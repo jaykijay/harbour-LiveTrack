@@ -110,10 +110,6 @@ otsaloma,ygriega for their really good code
         <translation>Statistiken</translation>
     </message>
     <message>
-        <source>fetching</source>
-        <translation>hole..</translation>
-    </message>
-    <message>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>

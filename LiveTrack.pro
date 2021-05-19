@@ -14,7 +14,7 @@ TARGET = LiveTrack
 
 CONFIG += sailfishapp
 
-SOURCES += src/LiveTrack.cpp \
+SOURCES += src/harbour-livetrack.cpp \
     src/settings.cpp
 
 DISTFILES += qml/LiveTrack.qml \
@@ -25,32 +25,28 @@ DISTFILES += qml/LiveTrack.qml \
     rpm/LiveTrack.spec \
     rpm/LiveTrack.yaml \
     translations/*.ts \
-    LiveTrack.desktop \
+    harbour-livetrack.desktop \
     qml/PositionSource.qml \
     qml/Timer.qml \
     qml/DetailItem2.qml \
     qml/About.qml \
-    icons/livetrack.svg \
-    icons/108x108/example.png \
-    icons/128x128/example.png \
-    icons/172x172/example.png \
-    icons/86x86/example.png \
-    icons/livetrack.svg \
-    icons/108x108/livetrack-108.png \
-    icons/128x128/livetrack-128.png \
-    icons/172x172/livetrack-172.png \
+    icons/harbour-livetrack.svg \
+    icons/harbour-livetrack.svg \
+    icons/108x108/harbour-livetrack-108.png \
+    icons/128x128/harbour-livetrack-128.png \
+    icons/172x172/harbour-livetrack-172.png \
     icons/86x86/livetrack-86.png \
     icons/livetrack.svg \
-    icons/108x108/Livetrack.png \
-    icons/128x128/Livetrack.png \
-    icons/172x172/Livetrack.png \
-    icons/86x86/Livetrack.png \
-    icons/livetrack.svg \
-    icons/108x108/LiveTrack.png \
-    icons/128x128/LiveTrack.png \
-    icons/172x172/LiveTrack.png \
-    icons/86x86/LiveTrack.png \
-    icons/livetrack.svg \
+    icons/108x108/harbour-livetrack.png \
+    icons/128x128/harbour-livetrack.png \
+    icons/172x172/harbour-livetrack.png \
+    icons/86x86/harbour-livetrack.png \
+    icons/harbour-livetrack.svg \
+    icons/108x108/harbour-livetrack.png \
+    icons/128x128/harbour-livetrack.png \
+    icons/172x172/harbour-livetrack.png \
+    icons/86x86/harbour-livetrack.png \
+    icons/harbour-livetrack.svg \
     qml/FirstPage.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172

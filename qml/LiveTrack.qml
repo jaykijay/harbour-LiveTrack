@@ -28,9 +28,9 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import QtQuick 2.0
+import QtQuick 2.6
 import Sailfish.Silica 1.0
-import QtPositioning 5.3
+import QtPositioning 5.4
 import "."
 
 ApplicationWindow

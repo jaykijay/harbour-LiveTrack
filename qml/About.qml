@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.6
 import Sailfish.Silica 1.0
 
 Page {
@@ -21,7 +21,7 @@ Page {
 
 
             Label {
-                text: "LiveTrack 0.6.4"
+                text: "LiveTrack 0.8.2"
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: Theme.fontSizeExtraLarge
                 anchors {
