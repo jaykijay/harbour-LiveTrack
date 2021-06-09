@@ -25,8 +25,19 @@ Page {
         horizontalAlignment: textAlignment
         EnterKey.iconSource: "image://theme/icon-m-enter-next"
         EnterKey.onClicked: idlabel.focus = true
-        onTextChanged:
-            livetracksettings.set("URL",text)
+        onTextChanged: {
+            //console.log("Got text: " + text);
+            // define regexp:
+            //  * what we want is inside ()
+            //  * everything before the first ?:      [^?]*
+            //  * and the / before that:              .*\/[*?]*
+            //  * match all the rest after the ? too: .*
+            var re = /(.*\/)[^?]*.*/
+            // $1 contains the match between the () above
+            var newtext = text.replace(re,'$1');
+            //console.log("Transformed text: " + newtext);
+            livetracksettings.set("URL",newtext)
+        }
     }
     TextField {
         id:idlabel
