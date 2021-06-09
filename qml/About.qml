@@ -21,7 +21,7 @@ Page {
 
 
             Label {
-                text: "LiveTrack 0.8.2"
+                text: "LiveTrack 0.9.1"
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: Theme.fontSizeExtraLarge
                 anchors {
@@ -88,6 +88,7 @@ Icon was made by goncharov(@gregguh)\n
 Thanks to: \n
 @ajftw_ani ,my love -> for testing \n
 my Brother -> for testing \n
+nephros for his good PRs \n
 otsaloma,ygriega for their really good code \n
 @DylanVanAssche for helping me with some bugs.")
                 font.pixelSize: Theme.fontSizeExtraSmall

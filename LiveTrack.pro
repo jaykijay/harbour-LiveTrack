@@ -10,9 +10,11 @@
 #   - translation filenames have to be changed
 
 # The name of your application
-TARGET = LiveTrack
+TARGET = harbour-livetrack
 
 CONFIG += sailfishapp
+
+QT += core positioning
 
 SOURCES += src/harbour-livetrack.cpp \
     src/settings.cpp
@@ -24,6 +26,9 @@ DISTFILES += qml/LiveTrack.qml \
     rpm/LiveTrack.changes.run.in \
     rpm/LiveTrack.spec \
     rpm/LiveTrack.yaml \
+    rpm/harbour-livetrack.changes.in \
+    rpm/harbour-livetrack.changes.run.in \
+    rpm/harbour-livetrack.yaml \
     translations/*.ts \
     harbour-livetrack.desktop \
     qml/PositionSource.qml \

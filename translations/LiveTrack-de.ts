@@ -38,6 +38,8 @@ Thanks to:
 
 my Brother -&gt; for testing 
 
+nephros for his good PRs 
+
 otsaloma,ygriega for their really good code 
 
 @DylanVanAssche for helping me with some bugs.</source>
@@ -135,6 +137,10 @@ otsaloma,ygriega for their really good code
     <message>
         <source>Settings</source>
         <translation>Einstellungen</translation>
+    </message>
+    <message>
+        <source>Timer Interval</source>
+        <translation type="unfinished">Timer Intervall</translation>
     </message>
 </context>
 </TS>

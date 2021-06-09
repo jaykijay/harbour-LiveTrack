@@ -57,14 +57,14 @@ Page {
       description: "Tap to switch"
       menu: ContextMenu {
         width:parent.width - Theme.paddingLarge * 2
-        MenuItem { text: "60s" }
-        MenuItem { text: "45s" }
-        MenuItem { text: "30s" }
-        MenuItem { text: "15s" }
-        MenuItem { text: "10s" }
-        MenuItem { text: "5s" }
-        MenuItem { text: "3s" }
         MenuItem { text: "1s" }
+        MenuItem { text: "3s" }
+        MenuItem { text: "5s" }
+        MenuItem { text: "10s" }
+        MenuItem { text: "15s" }
+        MenuItem { text: "30s" }
+        MenuItem { text: "45s" }
+        MenuItem { text: "60s" }
       }
       onValueChanged: {
         var val = parseInt(text.replace("s", "000"))
