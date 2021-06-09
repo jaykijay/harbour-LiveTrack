@@ -94,17 +94,18 @@ otsaloma,ygriega for their really good code
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/FirstPage.qml" line="39"/>
+        <location filename="../qml/FirstPage.qml" line="43"/>
         <source>Longitude</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/FirstPage.qml" line="43"/>
+        <location filename="../qml/FirstPage.qml" line="39"/>
         <source>Latitude</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/FirstPage.qml" line="47"/>
+        <location filename="../qml/FirstPage.qml" line="75"/>
         <source>Accuracy</source>
         <translation type="unfinished"></translation>
     </message>
@@ -130,33 +131,68 @@ otsaloma,ygriega for their really good code
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/FirstPage.qml" line="96"/>
-        <source>Statistics</source>
+        <location filename="../qml/FirstPage.qml" line="101"/>
+        <source>ok</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/FirstPage.qml" line="100"/>
-        <source>Send ok</source>
+        <location filename="../qml/FirstPage.qml" line="103"/>
+        <source>low</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/FirstPage.qml" line="104"/>
-        <source>To send</source>
+        <location filename="../qml/FirstPage.qml" line="105"/>
+        <source>bad</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/FirstPage.qml" line="108"/>
+        <location filename="../qml/FirstPage.qml" line="117"/>
+        <source>Tracking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/FirstPage.qml" line="133"/>
+        <source>enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/FirstPage.qml" line="133"/>
+        <source>paused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/FirstPage.qml" line="143"/>
+        <source>Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/FirstPage.qml" line="172"/>
+        <source>sending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/FirstPage.qml" line="182"/>
+        <source>Datapoints</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/FirstPage.qml" line="190"/>
+        <source>Sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/FirstPage.qml" line="196"/>
+        <source>Saved</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/FirstPage.qml" line="208"/>
+        <source>Interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/FirstPage.qml" line="202"/>
         <source>Ignored</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/FirstPage.qml" line="112"/>
-        <source>Timer Interval</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/FirstPage.qml" line="113"/>
-        <source> sec</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

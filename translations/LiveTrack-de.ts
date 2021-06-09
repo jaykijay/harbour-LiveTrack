@@ -104,32 +104,60 @@ otsaloma,ygriega for their really good code
         <translation>Geschwindigkeit</translation>
     </message>
     <message>
-        <source> sec</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Statistics</source>
-        <translation>Statistiken</translation>
-    </message>
-    <message>
         <source>About</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Send ok</source>
-        <translation>Gesendet</translation>
-    </message>
-    <message>
-        <source>To send</source>
-        <translation>Zu senden</translation>
     </message>
     <message>
         <source>Ignored</source>
         <translation>Ignoriert</translation>
     </message>
     <message>
-        <source>Timer Interval</source>
-        <translation>Timer Intervall</translation>
+        <source>ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>low</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bad</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tracking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>paused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Datapoints</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saved</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interval</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
