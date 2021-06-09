@@ -51,22 +51,25 @@ Page {
         onTextChanged:
             livetracksettings.set("ID",text)
     }
-    TextField {
-        id: intervaldlabel
-        width: parent.width
-        inputMethodHints: Qt.ImhFormattedNumbersOnly
-        label: "Update locatation every x seconds"
-        text: livetracksettings.getString("intervald")/1000
-        placeholderText: label
-        horizontalAlignment: textAlignment
-        EnterKey.iconSource: "image://theme/icon-m-enter-next"
-        EnterKey.onClicked: serverurllabel.focus = true
-        onTextChanged: {
-            if(text >0.1){
-            positiontimer.intervald=text*1000;
-            livetracksettings.set("intervald",text*1000)
-            }
-        }
+    ComboBox {
+      anchors.horizontalCenter: parent.horizontalCenter
+      label: qsTr("Timer Interval")
+      description: "Tap to switch"
+      menu: ContextMenu {
+        width:parent.width - Theme.paddingLarge * 2
+        MenuItem { text: "60s" }
+        MenuItem { text: "45s" }
+        MenuItem { text: "30s" }
+        MenuItem { text: "15s" }
+        MenuItem { text: "10s" }
+        MenuItem { text: "5s" }
+        MenuItem { text: "3s" }
+        MenuItem { text: "1s" }
+      }
+      onValueChanged: {
+        var val = parseInt(text.replace("s", "000"))
+        positiontimer.intervald=val; livetracksettings.set("intervald",val)
+      }
     }
     TextSwitch {
         id: autostart
