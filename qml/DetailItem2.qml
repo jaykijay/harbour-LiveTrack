@@ -76,6 +76,7 @@ Item {
         color: Theme.highlightColor
         font.pixelSize: Theme.fontSizeLarge
         textFormat: Text.PlainText
-        wrapMode: Text.Wrap
+        wrapMode: Text.NoWrap
+        elide: Text.ElideRight
     }
 }
