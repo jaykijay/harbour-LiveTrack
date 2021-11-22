@@ -10,7 +10,7 @@ import QtPositioning 5.4
         property int tempaccuracy: 0
         property int tempaltitude: 0
         property int tempindextimer: 0
-        property int threshold: 15
+        property int threshold: 900
         property int intervald:livetracksettings.get("intervald");
         property int ignored: 0
         property bool debug: false //DEBUG
@@ -21,8 +21,9 @@ import QtPositioning 5.4
             tosend = positiondata.positionvar.length;
        //     console.log("Length:"+tosend+"\n");
    if(gps.ready && gps.valid) {
-            threshold = gps.position.horizontalAccuracy || 15;
-        if (threshold > 0 && threshold < 60){ //stop if accuracy is too bad -> under 60meters
+            threshold = gps.position.horizontalAccuracy;
+       console.log(threshold)
+        if (threshold > 0 && threshold < 120){ //stop if accuracy is too bad -> under 120 meters
 
               coord = gps.position.coordinate;
               tempspeed = gps.position.speed;

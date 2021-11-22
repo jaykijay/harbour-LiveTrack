@@ -150,7 +150,7 @@ Page {
                                    sending = true
                                    for(var i=0;positiondata.positionvar.length >0 && positiondata.positionvar.length > i ;i++){
                                        sendData(i);
-                                       tosend = positiondata.positionvar.length;
+                                       positiontimer.tosend = positiondata.positionvar.length;
                                    }
                                    sending = false
                                    }
@@ -231,7 +231,7 @@ Page {
                             horizontalAlignment: Text.AlignRight
                             color: Theme.highlightColor
                             font.pixelSize: Theme.fontSizeTiny
-                            text: (positiontimer.interval/1000)
+                            text: (positiontimer.interval/1000 +"s")
 
                         }
                       }

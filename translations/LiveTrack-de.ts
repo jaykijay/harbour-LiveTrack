@@ -164,11 +164,11 @@ otsaloma,ygriega for their really good code
     <name>SettingsPages</name>
     <message>
         <source>Settings</source>
-        <translation>Einstellungen</translation>
+        <translation type="unfinished">Einstellungen</translation>
     </message>
     <message>
         <source>Timer Interval</source>
-        <translation type="unfinished">Timer Intervall</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

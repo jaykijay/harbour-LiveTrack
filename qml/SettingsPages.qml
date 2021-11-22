@@ -55,6 +55,7 @@ Page {
       anchors.horizontalCenter: parent.horizontalCenter
       label: qsTr("Timer Interval")
       description: "Tap to switch"
+      currentIndex: livetracksettings.get("intervali");
       menu: ContextMenu {
         width:parent.width - Theme.paddingLarge * 2
         MenuItem { text: "1s" }
@@ -67,8 +68,8 @@ Page {
         MenuItem { text: "60s" }
       }
       onValueChanged: {
-        var val = parseInt(text.replace("s", "000"))
-        positiontimer.intervald=val; livetracksettings.set("intervald",val)
+        var val = parseInt(value.replace("s", "000"))
+        positiontimer.intervald=val; livetracksettings.set("intervald",val); livetracksettings.set("intervali",currentIndex)
       }
     }
     TextSwitch {
@@ -80,6 +81,16 @@ Page {
             livetracksettings.set("autostart",checked)
         }
     }
+
+    TextSwitch {
+        id: traccar
+        text: "Osmand/ Traccar URL"
+        checked: livetracksettings.getBool("traccar")
+        description: "Use alternative Osmand URL used by Traccar (?id= instead of /id=)"
+        onCheckedChanged: {
+            livetracksettings.set("traccar",checked)
+        }
+    }
     Button {
         id: debug
         text: "Debug"
@@ -88,7 +99,7 @@ Page {
         anchors.horizontalCenter: parent.horizontalCenter
 
     }
-}
 
 }
 
+}
