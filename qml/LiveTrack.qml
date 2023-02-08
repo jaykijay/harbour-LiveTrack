@@ -46,6 +46,7 @@ ApplicationWindow
         property var positionvar: [];
     }
     property int sendgood:0;
+    readonly property string userAgent: Qt.application.name
 
 //-----------------------Function-----------------------------//
     property bool state: false;
@@ -56,7 +57,7 @@ ApplicationWindow
             url = livetracksettings.getString("URL")+"?id="+livetracksettings.getString("ID")+"&lat=" + positiondata.positionvar[index].positn.latitude +"&lon="+ positiondata.positionvar[index].positn.longitude+"&timestamp="+ positiondata.positionvar[index].timestamp+"&alt="+ positiondata.positionvar[index].alt+"&speed="+ positiondata.positionvar[index].speed+"&acc="+ positiondata.positionvar[index].horizontalAccuracy;
         }
         else {
-            url = livetracksettings.getString("URL")+livetracksettings.getString("ID")+"?lat=" + positiondata.positionvar[index].positn.latitude +"&lon="+ positiondata.positionvar[index].positn.longitude+"&timestamp="+ positiondata.positionvar[index].timestamp+"&alt="+ positiondata.positionvar[index].alt+"&speed="+ positiondata.positionvar[index].speed+"&acc="+ positiondata.positionvar[index].horizontalAccuracy;
+            url = livetracksettings.getString("URL")+livetracksettings.getString("ID")+"?lat=" + positiondata.positionvar[index].positn.latitude +"&lon="+ positiondata.positionvar[index].positn.longitude+"&timestamp="+ positiondata.positionvar[index].timestamp+"&alt="+ positiondata.positionvar[index].alt+"&speed="+ positiondata.positionvar[index].speed+"&acc="+ positiondata.positionvar[index].horizontalAccuracy+"&useragent=" + userAgent;
         }
         http.open("Get", url, true); //true=asynchronus,false=synchronus
         http.onreadystatechange = function() {
