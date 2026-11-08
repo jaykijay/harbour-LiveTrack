@@ -34,3 +34,9 @@ Sourcecode is on Github, feel free to help :)
 
 Icon made by Greg Goncharov (@gregguh)
 
+## Building RPMs
+
+The GitHub Actions workflow builds RPMs for `aarch64`, `armv7hl`, and `i486`
+using the SailfishOS Platform SDK 5.1.0.11. Push a `v*` tag to build and
+publish a GitHub release, or start the workflow manually to select another
+SDK release.

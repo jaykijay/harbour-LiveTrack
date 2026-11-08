@@ -1,0 +1,98 @@
+name: Build SailfishOS RPMs
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      sailfish_release:
+        description: SailfishOS Platform SDK release
+        required: true
+        default: 5.1.0.11
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sailfish-release-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  DEFAULT_SAILFISH_RELEASE: 5.1.0.11
+
+jobs:
+  build:
+    name: Build ${{ matrix.arch }} RPM
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        arch:
+          - aarch64
+          - armv7hl
+          - i486
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Select SailfishOS release
+        id: release
+        env:
+          INPUT_RELEASE: ${{ inputs.sailfish_release }}
+        run: |
+          release="${INPUT_RELEASE:-${DEFAULT_SAILFISH_RELEASE}}"
+          echo "release=${release}" >> "$GITHUB_OUTPUT"
+
+      - name: Build RPM
+        uses: R1tschY/sailfish-build-rpm@v1
+        with:
+          arch: ${{ matrix.arch }}
+          release: ${{ steps.release.outputs.release }}
+          check: true
+          fix-version: false
+
+      - name: Upload RPMs
+        uses: actions/upload-artifact@v4
+        with:
+          name: rpms-${{ matrix.arch }}
+          path: RPMS/*.rpm
+          if-no-files-found: error
+          retention-days: 14
+
+  release:
+    name: Publish GitHub release
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download RPMs
+        uses: actions/download-artifact@v4
+        with:
+          pattern: rpms-*
+          merge-multiple: true
+          path: release-assets
+
+      - name: Select release tag
+        id: tag
+        env:
+          INPUT_RELEASE: ${{ inputs.sailfish_release }}
+          PUSHED_TAG: ${{ github.ref_name }}
+          RUN_NUMBER: ${{ github.run_number }}
+        run: |
+          if [[ "${GITHUB_EVENT_NAME}" == "push" ]]; then
+            tag="${PUSHED_TAG}"
+          else
+            release="${INPUT_RELEASE:-${DEFAULT_SAILFISH_RELEASE}}"
+            tag="sailfish-${release}-${RUN_NUMBER}"
+          fi
+          echo "tag=${tag}" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.tag.outputs.tag }}
+        run: |
+          gh release create "${RELEASE_TAG}" release-assets/*.rpm \
+            --title "SailfishOS RPMs ${RELEASE_TAG}" \
+            --generate-notes
