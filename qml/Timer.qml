@@ -36,6 +36,9 @@ import QtPositioning 5.4
                                                  timestamp: (new Date).getTime(),
                                                  horizontalAccuracy: tempaccuracy,
                                                  alt: tempaltitude,
+                                                 // Snapshot battery readings so retries keep the original values.
+                                                 batteryLevel: livetracksettings.getBool("traccar") ? batteryData.percentage : null,
+                                                 charging: livetracksettings.getBool("traccar") ? batteryData.charging : null,
                                                  dirty: 0 });
                  // console.log(" variable:"+tempspeed +"\n");
                 //  console.log(positiondata.positionvar[positiondata.positionvar.length -1].speed +" speed: "+ positiondata.positionvar[positiondata.positionvar.length -1].horizontalAccuracy +"\n");
