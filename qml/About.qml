@@ -21,7 +21,7 @@ Page {
 
 
             Label {
-                text: "LiveTrack 0.10.0"
+                text: "LiveTrack 0.11.0"
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: Theme.fontSizeExtraLarge
                 anchors {
